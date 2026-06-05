@@ -1,0 +1,79 @@
+import { SVGProps } from "react";
+import { useToken } from "@chakra-ui/react";
+
+const resolveThemeColor = (value?: string) => {
+    if (!value) return undefined;
+    const [resolved] = useToken("colors", [value]);
+    return resolved || value;
+};
+
+export const HeartIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none" {...props}>
+        <path d="M5.95536e-08 4.05069C-9.22365e-05 3.51247 0.107097 2.97963 0.315302 2.48331C0.523508 1.98698 0.828553 1.53714 1.21261 1.16007C1.59667 0.782992 2.05203 0.486251 2.55209 0.287187C3.05215 0.0881223 3.58687 -0.00927256 4.125 0.000694555C4.76172 -0.00268682 5.39189 0.129297 5.97374 0.387898C6.55559 0.646498 7.07584 1.02581 7.5 1.50069C7.92416 1.02581 8.44441 0.646498 9.02626 0.387898C9.60811 0.129297 10.2383 -0.00268682 10.875 0.000694555C11.4131 -0.00927256 11.9479 0.0881223 12.4479 0.287187C12.948 0.486251 13.4033 0.782992 13.7874 1.16007C14.1714 1.53714 14.4765 1.98698 14.6847 2.48331C14.8929 2.97963 15.0001 3.51247 15 4.05069C15 8.06769 10.2157 11.1007 7.5 13.5007C4.79025 11.0804 5.95536e-08 8.07069 5.95536e-08 4.05069Z" fill="black" />
+    </svg>
+);
+
+
+export const CommentIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" {...props}>
+        <path d="M16.5 3C16.5 2.175 15.825 1.5 15 1.5H3C2.175 1.5 1.5 2.175 1.5 3V12C1.5 12.825 2.175 13.5 3 13.5H13.5L16.5 16.5V3Z" fill="black" />
+    </svg>
+);
+
+export const CalendarIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
+        <path d="M7 11H9V13H7V11ZM7 15H9V17H7V15ZM11 11H13V13H11V11ZM11 15H13V17H11V15ZM15 11H17V13H15V11ZM15 15H17V17H15V15Z" fill="#5F5F5F" />
+        <path d="M5 22H19C20.103 22 21 21.103 21 20V6C21 4.897 20.103 4 19 4H17V2H15V4H9V2H7V4H5C3.897 4 3 4.897 3 6V20C3 21.103 3.897 22 5 22ZM19 8L19.001 20H5V8H19Z" fill="#5F5F5F" />
+    </svg>
+);
+
+export const CrossIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
+        <path d="M17.6569 16.2426L13.4142 12L17.6569 7.75736L16.2426 6.34315L12 10.5858L7.75736 6.34315L6.34315 7.75736L10.5858 12L6.34315 16.2426L7.75736 17.6569L12 13.4142L16.2426 17.6569L17.6569 16.2426Z" fill="#5F5F5F" />
+    </svg>
+)
+
+export const ListIcon = ({ fill, color, ...props }: SVGProps<SVGSVGElement>) => {
+    const activeColor = resolveThemeColor(color || fill || "#C8C7C7");
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="22"
+            viewBox="0 0 24 22"
+            style={{ color: activeColor }}
+            {...props}
+        >
+            <rect width="6" height="6" fill="currentColor" />
+            <rect y="8" width="6" height="6" fill="currentColor" />
+            <rect y="16" width="6" height="6" fill="currentColor" />
+            <rect x="9" y="10" width="15" height="2" fill="currentColor" />
+            <rect x="9" y="18" width="15" height="2" fill="currentColor" />
+            <rect x="9" y="2" width="15" height="2" fill="currentColor" />
+        </svg>
+    );
+};
+
+export const BoxIcon = ({ fill, color, ...props }: SVGProps<SVGSVGElement>) => {
+    const activeColor = resolveThemeColor(color || fill || "#C8C8C8");
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            style={{ color: activeColor }}
+            {...props}
+        >
+            <rect width="6" height="6" fill="currentColor" />
+            <rect x="8" width="6" height="6" fill="currentColor" />
+            <rect x="16" width="6" height="6" fill="currentColor" />
+            <rect y="8" width="6" height="6" fill="currentColor" />
+            <rect y="16" width="6" height="6" fill="currentColor" />
+            <rect x="8" y="8" width="6" height="6" fill="currentColor" />
+            <rect x="8" y="16" width="6" height="6" fill="currentColor" />
+            <rect x="16" y="8" width="6" height="6" fill="currentColor" />
+            <rect x="16" y="16" width="6" height="6" fill="currentColor" />
+        </svg>
+    );
+};
