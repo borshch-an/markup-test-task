@@ -33,7 +33,7 @@ const MarkupTest = () => {
                 position="absolute"
                 top="-2.25rem"
                 left="-2.6875rem"
-                src="/topCorner.png"
+                src={`${import.meta.env.BASE_URL}/topCorner.png`}
                 zIndex={0}
                 width='689px'
                 height='482px'
@@ -45,7 +45,7 @@ const MarkupTest = () => {
                 right="0"
                 width="19.6533rem"
                 height="22.9758rem"
-                src="/bottomCorner.png"
+                src={`${import.meta.env.BASE_URL}/bottomCorner.png`}
                 zIndex={0}
                 alt='Decorative bottom corner image' />
 

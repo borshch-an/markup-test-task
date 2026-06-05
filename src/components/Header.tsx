@@ -27,7 +27,7 @@ export const Header = () => {
                 overflow="hidden"
                 flexShrink={0}
             >
-                <Image src='/logo.png' alt='logo' width='138px' height='138px' />
+                <Image src={`${import.meta.env.BASE_URL}/logo.png`} alt='logo' width='138px' height='138px' />
             </Box>
 
             <Flex direction="column" flex={1} gap="1rem">
